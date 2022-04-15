@@ -8,12 +8,14 @@ import DropDown from './components/DropDown'
 function App() {
   return (
     <div className="App">
-      <div style={{display:'flex', alignItems:'center',marginTop:'400px',flexDirection:'column'}}>
+      <div style={{display:'flex', alignItems:'center',marginTop:'50px',flexDirection:'column'}}>
        <Toggle/>
        
        <Tab/>
 
        <Slider/>
+       <Input />
+       <DropDown />
        </div>
     </div>
   );
