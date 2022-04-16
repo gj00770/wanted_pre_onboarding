@@ -22,29 +22,30 @@ function DropDown() {
     }
     const onMouseLeaveList = (e) => {
         e.target.style.backgroundColor='white'
-        console.log('hi')
        
     }
     const clickValue = (e) =>{
         setCurrentValue(e.target.innerHTML);
         setIsOpen(false);
     }
+
+
     return (
-      <div  style ={{marginTop:'40px',width:'400px',height:'500px',backgroundColor:'#F0F8FF'}}>
-        <div onClick={openModal}  style = {{display:'flex',justifyContent:'space-between',width:'360px',margin:'auto',marginTop:'20px',height:'40px' , border:'1px solid black',alignItems:'center',cursor:'pointer',backgroundColor:'white'}}> 
-                <div style={{marginLeft:'10px'}}>{currentValue}</div>
-                <div style={{marginRight:'10px'}}>
+      <div  className='DropDown' >
+        <div className='dropdown_value-container' onClick={openModal} > 
+                <div className='dropdown_value-container_current' >{currentValue}</div>
+                <div className='dropdown_value-container_icon-container' >
                 <Down  height='17px'/>
                 </div>
         </div>
-       <div style={{marginTop:'6px',display: isOpen? 'block' : 'none'}}>
-           <div style={{display:'flex',width:'358px' , backgroundColor:'white',marginLeft:'auto',marginRight:'auto'}}>
+       <div className='dropdown_value-combobox' style={{display: isOpen? 'block' : 'none'}}>
+           <div className='dropdown_value-combobox_icon' >
            <SearchIcon width='30px'/>
-           <input className='searchInput' placeholder='Search Symbol' style={{width:'328px',height:'40px',backgroundColor:'white',border:'none'}} onChange={search}></input>
+           <input className='searchInput' placeholder='Search Symbol' onChange={search}></input>
            </div>
            
-           <div  style={{width:'358px' , display:'flex', flexDirection:'column', alignItems:'flex-start',border:'1px solid black',marginLeft:'20px',backgroundColor:'#D3D3D3'}}>
-               <div style={{height:'40px',width:'358px',display:'flex',flexDirection:'column',backgroundColor:'white',borderBottom:'1px solid black'}}>All Symbols</div>
+           <div className='dropdown_value-combobox_list-container'>
+               <div className='dropdown_value-combobox_list-container-list' >All Symbols</div>
                {
                List.filter((val) =>{
                 if(current == ""){
@@ -52,7 +53,7 @@ function DropDown() {
                   }else if(val.toLowerCase().includes(current.toLowerCase())){
                     return val
                   }
-               }).map((el, key)=><div onClick={clickValue} onMouseEnter={onMouseEnterList} onMouseLeave={onMouseLeaveList} key={key} style={{height:'40px',cursor:'pointer',backgroundColor:'#D3D3D3',padding:'0px 0px 0px 0px',width:'100%',backgroundColor:'white'}} >{el}</div>)}
+               }).map((el, key)=><div className='dropdown_value-combobox_list-container-list_item'  onClick={clickValue} onMouseEnter={onMouseEnterList} onMouseLeave={onMouseLeaveList} key={key}  >{el}</div>)}
            </div>
        </div>
          

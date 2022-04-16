@@ -2,6 +2,7 @@ import React, { useRef,useState } from "react";
 import {ReactComponent as Check} from '../img/check.svg'
 import {ReactComponent as Eye} from '../img/eye.svg'
 import {ReactComponent as EyeSlash} from '../img/eyeSlash.svg'
+import "./Input.css"
 function Input() {
 
     const [email, setEmail] = useState(null);
@@ -54,23 +55,23 @@ function Input() {
 
 
     return (
-      <div style={{marginTop:"40px",width:"420px",backgroundColor:"#F0F8FF",height:"300px",display:'flex',flexDirection:'column' ,alignItems:'center'}}>
-          <div style={{display:'flex' , flexDirection:'column',alignItems:'flex-start',marginTop:'30px'}}>
+      <div className="Input" >
+          <div className="input_container" >
             <div  >E-mail</div>
-            <div style={{display:'flex'}}>
-                <input  onBlur={(e)=>isEmail(e)} onChange={emailVali} type='text' placeholder='E-mail' style={{height:'40px',width:'380px',fontSize:'16px'  }}></input>
-                <div style={{position:'absolute',marginLeft:'350px',marginTop:'13px'}}>
+            <div className="input_container_input-container"  >
+                <input className="input_container_input-container_input" onBlur={(e)=>isEmail(e)} onChange={emailVali} type='text' placeholder='E-mail' ></input>
+                <div className="input_container_input-container_email-icon" >
                      <Check  width='20px' fill={check}/>
                 </div>
             </div>
-            <div style={{display:alert,color:'red'}}>invalid email-address</div>
+            <div className="input_alert" style={{display:alert}}>invalid email-address</div>
           </div>
 
           <div style={{display:'flex' , flexDirection:'column',alignItems:'flex-start',marginTop:'20px'}}>
             <div >Password</div>
-            <div style={{display:'flex' }}>
-            <input  type={isPass} placeholder='Password' style={{height:'40px',width:'380px',fontSize:'16px'}}></input>
-                <div style={{position:'absolute',marginLeft:'350px',marginTop:'14px',cursor:'pointer'}} onClick={showPass}>
+            <div className="input_container_input-container" >
+            <input  className="input_container_input-container_input"  type={isPass} placeholder='Password' ></input>
+                <div className ='input_container_input-container_password-icon'  onClick={showPass}>
                     {   
                         isPass == 'password'?
                         <EyeSlash  width='20px' fill='grey' />

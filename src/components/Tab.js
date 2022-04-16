@@ -1,5 +1,5 @@
 import React, { useRef,useState } from "react";
-
+import './Tab.css'
 
 function Tab() {
     const tabRef = useRef(null);
@@ -21,14 +21,14 @@ function Tab() {
 
 
     return (
-      <div style={{marginTop:'40px',width:'400px',backgroundColor:'#F0F8FF',height:'90px',display:"flex",flexDirection:'column',justifyContent:'space-evenly'}} className="Slider" >
-          <div style={{display:'flex',justifyContent:'space-around'}}>
-                <div onClick={(e)=>clickBtn(e)} style={{width:'33%',cursor:'pointer'}}>감자</div>
-                <div onClick={(e)=>clickBtn(e)} style={{width:'33%',cursor:'pointer'}}>고구마</div>
-                <div onClick={(e)=>clickBtn(e)} style={{width:'33%',cursor:'pointer'}}>카레라이스</div>
+      <div className='Tab'   >
+          <div className='tab_menu' >
+                <div className='tab_menu_food' onClick={(e)=>clickBtn(e)} >감자</div>
+                <div className='tab_menu_food' onClick={(e)=>clickBtn(e)} >고구마</div>
+                <div className='tab_menu_food' onClick={(e)=>clickBtn(e)} >카레라이스</div>
           </div>
-          <div style={{backgroundColor:'#D3D3D3',width:'400px',height:'2px'}}>
-              <div ref={tabRef} style={{width:"33.33333%",backgroundColor:'blue',height:'2px',transition:'0.3s'}}>
+          <div className='tab_line'>
+              <div className='tab_line_level' ref={tabRef} >
               </div>
           </div>
       </div>

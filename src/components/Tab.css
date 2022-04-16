@@ -1,0 +1,30 @@
+.Tab{
+    margin-top: 40px;
+    width: 400px;
+    background-color: #F0F8FF;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.tab_menu{
+    display: flex;
+    justify-content: space-around;
+
+}
+.tab_menu_food{
+    width:33%;
+    cursor: pointer;
+
+}
+.tab_line{
+    background-color: #D3D3D3;
+    width: 400px;
+    height: 2px;
+}
+.tab_line_level{
+    width: 33.3333333%;
+    background-color: blue;
+    height: 2px;
+    transition:0.3s;
+}

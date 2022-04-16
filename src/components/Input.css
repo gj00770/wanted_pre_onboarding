@@ -1,0 +1,45 @@
+.Input{
+    /* style={{marginTop:"40px",width:"420px",backgroundColor:"#F0F8FF",height:"300px",display:'flex',flexDirection:'column' ,alignItems:'center'}} */
+    margin-top: 40px;
+    width: 420px;
+    background-color:#F0F8FF;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F0F8FF;
+    margin-top: 40px;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+
+}
+
+.input_container_input-container{
+    display: flex;
+}
+.input_container_input-container_input{
+    height: 40px;
+    width: 380px;
+    font-size: 16px;
+}
+.input_container_input-container_email-icon{
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 13px;
+}
+.input_alert{
+    color:red;
+}
+
+.input_container_input-container_password-icon{
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
