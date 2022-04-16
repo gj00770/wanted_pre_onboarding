@@ -1,11 +1,19 @@
-# Getting Started with Create React App
+# 프리온보딩
 
 node version 15.14.0 에서 작업했습니다.
 
 ## toggle
 
+ 
+### 구현한방법
+일단 움직일 토글을 ref로 가져와서 토글은 움직인다고 생각했습니다.우선 토글과 메뉴2개를 토글 컨테이너안에 위치시킵니다. 그리고나서
+윰작일토큰을 useRef를  이용하여 position absolute 속성을 주어서 원하는 위치에 배치시킵니다. 메뉴가두개이기때문에 width에 절반에 양쪽 margin 값을 뺀만큼 이동시켜줘야합니다. 총컨테이너 너비에 절만반큼이동 시켜주면 됩니다.  
+
+### 구현한이유
+
 
 ## tab
+
 ## slider
 ## input
 
