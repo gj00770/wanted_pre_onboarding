@@ -12,7 +12,6 @@ function Input() {
     const [searchTerm, setSearchTerm] = useState("");
     const emailVali = (e) =>{
         setEmail(e.target.value)
-        console.log(email)
         const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
         if(emailRegex.test(e.target.value)){
             setCheck('green')
@@ -27,8 +26,6 @@ function Input() {
     }
     const isEmail = (e) => {
         const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-        console.log(e.target.value.length)
-       console.log(emailRegex.test(e.target.value))
        if(emailRegex.test(e.target.value)|| e.target.value.length == 0 ){
         setAlert('none')
        }
@@ -41,12 +38,10 @@ function Input() {
 
 
     const showPass = () =>{
-        console.log('hi')    
         if(isPass=='password'){
             setIsPass('text')
         } 
         else if(isPass == 'text'){
-        console.log('hi')    
         setIsPass('password')
         }
         
