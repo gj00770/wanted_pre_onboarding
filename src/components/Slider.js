@@ -5,7 +5,6 @@ function Slider() {
     const SliderContainerRef = useRef(null);
     const [percent , setPercent] = useState(0);
     const [length, setLength] = useState('12px');
-    const [paintCircle , setPaintCircle] = useState(1);
 
 
     const clickMouse = (e) =>{
