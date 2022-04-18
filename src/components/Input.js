@@ -9,7 +9,6 @@ function Input() {
     const [isPass, setIsPass] = useState('password');
     const [check , setCheck] = useState('grey');
     const [alert, setAlert] = useState('none');
-    const [searchTerm, setSearchTerm] = useState("");
     const emailVali = (e) =>{
         setEmail(e.target.value)
         const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
