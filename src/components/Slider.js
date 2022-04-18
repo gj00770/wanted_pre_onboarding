@@ -21,6 +21,7 @@ function Slider() {
             setLength('0px')
         }
         else{
+            
             setPercent(Math.round((  SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX ) /-3.84))
             //SliderRef.current.style.left = `${(SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX)  /-3.84 }%`
             SliderRef.current.style.left = `${(SliderContainerRef.current.getBoundingClientRect().left-e.nativeEvent.pageX-12 )*-1}px`
