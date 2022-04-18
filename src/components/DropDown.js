@@ -14,7 +14,6 @@ function DropDown() {
     const openModal = () => {
        
         setIsOpen(!isOpen);
-        console.log(isOpen);
     }
     const onMouseEnterList = (e) => {
        e.target.style.backgroundColor='#D3D3D3'
@@ -31,7 +30,7 @@ function DropDown() {
 
 
     return (
-      <div  className='DropDown' >
+      <div  className='dropdown' >
         <div className='dropdown_value-container' onClick={openModal} > 
                 <div className='dropdown_value-container_current' >{currentValue}</div>
                 <div className='dropdown_value-container_icon-container' >
