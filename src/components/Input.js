@@ -3,15 +3,16 @@ import {ReactComponent as Check} from '../img/check.svg'
 import {ReactComponent as Eye} from '../img/eye.svg'
 import {ReactComponent as EyeSlash} from '../img/eyeSlash.svg'
 import "./Input.css"
+const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 function Input() {
 
     const [email, setEmail] = useState(null);
     const [isPass, setIsPass] = useState('password');
     const [check , setCheck] = useState('grey');
     const [alert, setAlert] = useState('none');
+
     const emailVali = (e) =>{
         setEmail(e.target.value)
-        const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
         if(emailRegex.test(e.target.value)){
             setCheck('green')
             setAlert('none')
@@ -20,12 +21,10 @@ function Input() {
             setCheck('grey')
             
        }
-    
-
        
     }
-    const isEmail = (e) => {
-        const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+
+    const emailValiOnBlur = (e) => {
        if(emailRegex.test(e.target.value)|| e.target.value.length == 0 ){
         setAlert('none')
        }
@@ -34,7 +33,7 @@ function Input() {
        }
 
 
-      };
+    };
 
 
     const showPass = () =>{
@@ -54,7 +53,7 @@ function Input() {
           <div className="input_container" >
             <div  >E-mail</div>
             <div className="input_container_input-container"  >
-                <input className="input_container_input-container_input" onBlur={(e)=>isEmail(e)} onChange={emailVali} type='text' placeholder='E-mail' ></input>
+                <input className="input_container_input-container_input" onBlur={(e)=>emailValiOnBlur(e)} onChange={emailVali} type='text' placeholder='E-mail' ></input>
                 <div className="input_container_input-container_email-icon" >
                      <Check  width='20px' fill={check}/>
                 </div>

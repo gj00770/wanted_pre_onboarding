@@ -71,7 +71,9 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    border-bottom: 1px solid black;
+    text-align: left;
+    line-height: 40px;
+    cursor: pointer;
 
 }
 .dropdown_value-combobox_list-container-list_item{
@@ -81,4 +83,6 @@
     padding: 0px 0px 0px 0px;
     width: 100%;
     background-color: white;
+    text-align: left;
+    line-height: 40px;
 }

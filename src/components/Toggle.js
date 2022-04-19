@@ -1,11 +1,15 @@
 import React, { useRef,useState } from "react";
 import "./Toggle.css"
 
+
 function Toggle() {
+
     const [left, setLeft] = useState(true);
+
+
     const clickBtn = (e) =>{
         console.log(e.target.innerHTML)
-        
+
         if(e.target.innerHTML == '상세'){
           setLeft(false);
         }

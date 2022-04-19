@@ -8,13 +8,14 @@ function Slider() {
 
 
     const clickMouse = (e) =>{
-        
-        if((  SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX ) /-3.84 >= 100) {
+        const containerX = SliderContainerRef.current.getBoundingClientRect().left+8;
+        const redDotX = e.nativeEvent.pageX;
+        if((  containerX-redDotX ) /-3.84 >= 100) {
             setPercent(100);
             SliderRef.current.style.left = '404px'
             setLength('392px')
         }
-        else if((  SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX ) /-3.84 <= 0){
+        else if((  containerX-redDotX) /-3.84 <= 0){
 
             setPercent(0)
             SliderRef.current.style.left = '20px'
@@ -22,11 +23,10 @@ function Slider() {
         }
         else{
             
-            setPercent(Math.round((  SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX ) /-3.84))
-            //SliderRef.current.style.left = `${(SliderContainerRef.current.getBoundingClientRect().left+8-e.nativeEvent.pageX)  /-3.84 }%`
-            SliderRef.current.style.left = `${(SliderContainerRef.current.getBoundingClientRect().left-e.nativeEvent.pageX-12 )*-1}px`
-            setLength(`${(SliderContainerRef.current.getBoundingClientRect().left-e.nativeEvent.pageX-12 )*-1-(12)}px`)
-        }
+            setPercent(Math.round((  containerX-redDotX) /-3.84))
+            SliderRef.current.style.left = `${(containerX-redDotX-20 )*-1}px`
+            setLength(`${(containerX-redDotX-8 )*-1}px`)
+        }              
         document.addEventListener('mousemove',  moveMouse,false);
         document.addEventListener('mouseup',  mouseUp,false);
     }
@@ -62,7 +62,6 @@ function Slider() {
             setPercent(100)
             SliderRef.current.style.left = '404px'
             setLength('392px')
-            //SliderRef.current.style.left = `${SliderContainerRef.current.getBoundingClientRect().left-4+(384/4 * 4 )}px`
             
         }
      
@@ -78,22 +77,23 @@ function Slider() {
        
     };
     const moveMouse = (e) =>{
-          
-         if((  SliderContainerRef.current.getBoundingClientRect().left+8-e.pageX ) /-3.84 >= 100) {
+        const containerX = SliderContainerRef.current.getBoundingClientRect().left+8
+        const redDotX = e.pageX
+         if((  containerX-redDotX ) /-3.84 >= 100) {
             SliderRef.current.style.left = `404px`
              setPercent(100)
              setLength('392px')
          }
-         else if((  SliderContainerRef.current.getBoundingClientRect().left+8-e.pageX ) /-3.84 <= 0){
+         else if(( containerX-redDotX ) /-3.84 <= 0){
  
              setPercent(0)
              SliderRef.current.style.left = `20px`
              setLength('0px')
          }
          else{
-             setPercent(Math.round((  SliderContainerRef.current.getBoundingClientRect().left+8-e.pageX ) /-3.84))
-             SliderRef.current.style.left = `${(SliderContainerRef.current.getBoundingClientRect().left-e.pageX-12 )*-1}px`
-             setLength(`${(SliderContainerRef.current.getBoundingClientRect().left-e.pageX-12 )*-1 -(12)}px`)
+             setPercent(Math.round((  containerX-redDotX) /-3.84))
+             SliderRef.current.style.left = `${(containerX-redDotX-20 )*-1}px`
+             setLength(`${(containerX-redDotX-8 )*-1}px`)
          
          }
         

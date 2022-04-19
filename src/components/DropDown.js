@@ -2,8 +2,11 @@ import React, { useRef,useState } from "react";
 import {ReactComponent as SearchIcon} from '../img/searchIcon.svg'
 import {ReactComponent as Down} from '../img/down.svg'
 import './DropDown.css';
+
+const list = ["BTCUSD.PREP","ETHUSD.PREP","BCUHED.PREP","LCDTUDS.PREP","XRPUSD.PREP","1000PDSF.PREP"]
+
 function DropDown() {
-    const List = ["BTCUSD.PREP","ETHUSD.PREP","BCUHED.PREP","LCDTUDS.PREP","XRPUSD.PREP","1000PDSF.PREP"]
+    
     const [current, setCurrent] = useState('');
     const [isOpen, setIsOpen] = useState(false);
     const [currentValue, setCurrentValue] = useState('All Symbols');
@@ -12,7 +15,6 @@ function DropDown() {
       
     }
     const openModal = () => {
-       
         setIsOpen(!isOpen);
     }
     const onMouseEnterList = (e) => {
@@ -45,15 +47,16 @@ function DropDown() {
            </div>
            
            <div className='dropdown_value-combobox_list-container'>
-               <div className='dropdown_value-combobox_list-container-list' >All Symbols</div>
+               <div className='dropdown_value-combobox_list-container-list'  onClick={clickValue} onMouseEnter={onMouseEnterList} onMouseLeave={onMouseLeaveList} >All Symbols</div>
                {
-               List.filter((val) =>{
-                if(current == ""){
-                    return val
-                  }else if(val.toLowerCase().includes(current.toLowerCase())){
-                    return val
-                  }
-               }).map((el, key)=><div className='dropdown_value-combobox_list-container-list_item'  onClick={clickValue} onMouseEnter={onMouseEnterList} onMouseLeave={onMouseLeaveList} key={key}  >{el}</div>)}
+               list.filter(val =>
+                (
+                  !current || val.toLowerCase().includes(current.toLowerCase())))
+                  .map((el, key)=>
+                  <div className='dropdown_value-combobox_list-container-list_item'  onClick={clickValue} onMouseEnter={onMouseEnterList} onMouseLeave={onMouseLeaveList} key={key}  >
+                    {el}
+                  </div>
+                  )}
            </div>
        </div>
          
